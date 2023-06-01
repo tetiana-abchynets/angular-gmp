@@ -1,0 +1,17 @@
+img.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logout {
+  font-size: inherit;
+  margin-left: 16px;
+}
+
+

@@ -1,4 +1,11 @@
-<p>course-list works!</p>
-<app-course-item></app-course-item>
-<app-course-item></app-course-item>
-<app-course-item></app-course-item>
+<div class="course-item" *ngFor="let course of courses; trackBy: trackByFn">
+  <app-course-item [course]="course" (deletedCourseId)="deleteCourse($event)"></app-course-item>
+</div>
+
+<button
+  mat-raised-button
+  class="load-more"
+  (click)="loadMore()"
+>
+  <span>Load more</span>
+</button>

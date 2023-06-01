@@ -1,1 +1,13 @@
-<p>search-course works!</p>
+<input
+  type="text"
+  class="search"
+  placeholder="Type to search"
+  [(ngModel)]="searchValue"
+>
+<button
+  mat-raised-button
+  class="search-btn"
+  (click)="onSearch()"
+>
+  Search
+</button>

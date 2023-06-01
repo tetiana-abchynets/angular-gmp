@@ -1,0 +1,13 @@
+.course-item {
+  margin-bottom: 20px;
+}
+
+.load-more {
+  width: 100%;
+  margin-bottom: 84px;
+}
+
+.load-more span {
+  text-decoration: underline;
+  color: blue;
+}

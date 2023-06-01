@@ -1,0 +1,13 @@
+.search-btn {
+  background: #329032;
+  color: #fff;
+}
+
+input.search {
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin-right: 8px;
+}

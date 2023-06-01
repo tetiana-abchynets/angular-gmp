@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
-import { LogoComponent } from './logo/logo.component';
-import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    BreadcrumbsComponent,
-    LogoComponent,
-    UserInfoComponent,
+    BreadcrumbsComponent
   ],
   exports: [
     HeaderComponent,
@@ -20,7 +19,10 @@ import { UserInfoComponent } from './user-info/user-info.component';
     BreadcrumbsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class CoreModule { }

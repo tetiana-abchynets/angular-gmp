@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-course.component.css']
 })
 export class SearchCourseComponent {
+  searchValue = '';
 
+  onSearch(): void {
+    console.log(this.searchValue);
+  }
 }
