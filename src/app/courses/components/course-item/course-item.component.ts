@@ -14,8 +14,10 @@ export class CourseItemComponent implements OnInit {
   formattedDate!: string;
 
   ngOnInit() {
-    this.creationDate = new Date(this.course.creationDate);
-    this.formattedDate = this.creationDate.getMonth() + "/" + (this.creationDate.getDate()+1) + "/" + this.creationDate.getFullYear();
+    if (this.course && this.course.creationDate) {
+      this.creationDate = new Date(this.course.creationDate);
+      this.formattedDate = this.creationDate.getMonth() + "/" + (this.creationDate.getDate()+1) + "/" + this.creationDate.getFullYear();
+    }
   }
 
   edit(): void {

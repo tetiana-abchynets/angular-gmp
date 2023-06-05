@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AddCourseComponent } from './add-course.component';
 
@@ -8,7 +9,8 @@ describe('AddCourseComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddCourseComponent]
+      declarations: [AddCourseComponent],
+      imports: [MatIconModule]
     });
     fixture = TestBed.createComponent(AddCourseComponent);
     component = fixture.componentInstance;
