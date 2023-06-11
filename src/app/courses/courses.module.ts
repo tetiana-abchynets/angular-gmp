@@ -10,6 +10,7 @@ import { CourseItemComponent } from './components/course-item/course-item.compon
 import { SectionComponent } from './components/section/section.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { CourseBorderDirective } from './directives/course-border.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     CourseItemComponent,
     SectionComponent,
     SearchCourseComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    CourseBorderDirective
   ],
   exports: [
     CourseListComponent,

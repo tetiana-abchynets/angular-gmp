@@ -5,6 +5,11 @@
   justify-content: space-between;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+}
+
 .subtitle span {
   margin: 0 10px;
 }
@@ -21,4 +26,9 @@
 
 .actions button {
   margin: 0 10px;
+}
+
+.top-rated-icon {
+  color: orange;
+  margin-left: 10px;
 }
