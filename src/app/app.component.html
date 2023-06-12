@@ -1,9 +1,9 @@
 <app-header></app-header>
 <main>
   <app-breadcrumbs></app-breadcrumbs>
-  <app-section></app-section>
+  <app-section (filteredCourses)="handleFilteredCourses($event)"></app-section>
   <div class="container">
-    <app-course-list></app-course-list>
+    <app-course-list [filteredCourses]="filteredCourses"></app-course-list>
   </div>
 </main>
 <app-footer></app-footer>

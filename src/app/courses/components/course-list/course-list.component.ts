@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ICourse } from '../../../core/models/course';
 import { courses as data } from '../../../core/mocks/courses';
 
@@ -8,11 +8,16 @@ import { courses as data } from '../../../core/mocks/courses';
   styleUrls: ['./course-list.component.css']
 })
 
-export class CourseListComponent implements OnInit {
+export class CourseListComponent implements OnInit, OnChanges {
   courses!: ICourse[];
+  @Input() filteredCourses!: ICourse[];
 
   ngOnInit() {
     this.courses = data;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.courses = this.filteredCourses;
   }
 
   loadMore(): void {

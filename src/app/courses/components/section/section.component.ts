@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ICourse } from '../../../core/models/course';
 
 @Component({
   selector: 'app-section',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent {
+  @Output() filteredCourses: EventEmitter<ICourse[]> = new EventEmitter<ICourse[]>();
 
+  handleSearch(courses: ICourse[]): void {
+    this.filteredCourses.emit(courses);
+  }
 }

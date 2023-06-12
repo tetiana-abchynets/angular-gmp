@@ -1,6 +1,6 @@
 <mat-toolbar class="container">
   <mat-toolbar-row>
-    <app-search-course></app-search-course>
+    <app-search-course (filteredCourses)="handleSearch($event)"></app-search-course>
   </mat-toolbar-row>
 
   <mat-toolbar-row class="add-course">

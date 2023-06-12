@@ -11,12 +11,10 @@ export class CourseItemComponent implements OnInit {
   @Input() course!: ICourse;
   @Output() deletedCourseId = new EventEmitter<number>();
   creationDate!: Date;
-  formattedDate!: string;
 
   ngOnInit() {
     if (this.course && this.course.creationDate) {
       this.creationDate = new Date(this.course.creationDate);
-      this.formattedDate = this.creationDate.getMonth() + "/" + (this.creationDate.getDate()+1) + "/" + this.creationDate.getFullYear();
     }
   }
 

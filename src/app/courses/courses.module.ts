@@ -11,6 +11,9 @@ import { SectionComponent } from './components/section/section.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { CourseBorderDirective } from './directives/course-border.directive';
+import { DurationPipe } from './pipes/duration.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { CourseBorderDirective } from './directives/course-border.directive';
     SectionComponent,
     SearchCourseComponent,
     AddCourseComponent,
-    CourseBorderDirective
+    CourseBorderDirective,
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe
   ],
   exports: [
     CourseListComponent,
