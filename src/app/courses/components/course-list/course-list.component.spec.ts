@@ -12,14 +12,8 @@ describe('CourseListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        CourseListComponent,
-        CourseItemComponent
-      ],
-      imports: [
-        MatCardModule,
-        MatIconModule
-      ]
+      declarations: [CourseListComponent, CourseItemComponent],
+      imports: [MatCardModule, MatIconModule]
     });
     fixture = TestBed.createComponent(CourseListComponent);
     component = fixture.componentInstance;
@@ -45,6 +39,8 @@ describe('CourseListComponent', () => {
     component.deleteCourse(courseId);
 
     expect(component.courses.length).toBe(coursesMock.length - 1);
-    expect(component.courses.find((course) => course.id === courseId)).toBeUndefined();
+    expect(
+      component.courses.find((course) => course.id === courseId)
+    ).toBeUndefined();
   });
 });

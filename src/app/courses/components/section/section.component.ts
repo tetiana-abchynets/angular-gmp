@@ -7,7 +7,9 @@ import { ICourse } from '../../../core/models/course';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent {
-  @Output() filteredCourses: EventEmitter<ICourse[]> = new EventEmitter<ICourse[]>();
+  @Output() filteredCourses: EventEmitter<ICourse[]> = new EventEmitter<
+    ICourse[]
+  >();
 
   handleSearch(courses: ICourse[]): void {
     this.filteredCourses.emit(courses);

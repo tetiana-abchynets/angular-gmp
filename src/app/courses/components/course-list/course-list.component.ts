@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ICourse } from '../../../core/models/course';
 import { courses as data } from '../../../core/mocks/courses';
 
@@ -7,7 +7,6 @@ import { courses as data } from '../../../core/mocks/courses';
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.css']
 })
-
 export class CourseListComponent implements OnInit, OnChanges {
   courses!: ICourse[];
   @Input() filteredCourses!: ICourse[];
@@ -16,7 +15,7 @@ export class CourseListComponent implements OnInit, OnChanges {
     this.courses = data;
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.courses = this.filteredCourses;
   }
 
@@ -25,7 +24,7 @@ export class CourseListComponent implements OnInit, OnChanges {
   }
 
   deleteCourse(id: number): void {
-    this.courses = this.courses.filter(item => item.id !== id);
+    this.courses = this.courses.filter((item) => item.id !== id);
   }
 
   trackByFn(index: number) {

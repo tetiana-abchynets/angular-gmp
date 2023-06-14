@@ -11,10 +11,7 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
-      imports: [
-        MatToolbarModule,
-        MatIconModule
-      ]
+      imports: [MatToolbarModule, MatIconModule]
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;

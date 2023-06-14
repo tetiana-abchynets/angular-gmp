@@ -10,9 +10,11 @@ import { courses as data } from '../../../core/mocks/courses';
   providers: [FilterPipe]
 })
 export class SearchCourseComponent implements OnInit {
-  searchValue: string = '';
+  searchValue = '';
   courses!: ICourse[];
-  @Output() filteredCourses: EventEmitter<ICourse[]> = new EventEmitter<ICourse[]>();
+  @Output() filteredCourses: EventEmitter<ICourse[]> = new EventEmitter<
+    ICourse[]
+  >();
 
   constructor(private filterPipe: FilterPipe) {}
 
@@ -21,7 +23,10 @@ export class SearchCourseComponent implements OnInit {
   }
 
   onSearch(): void {
-    const filteredCourses: ICourse[] = this.filterPipe.transform(this.courses, this.searchValue);
+    const filteredCourses: ICourse[] = this.filterPipe.transform(
+      this.courses,
+      this.searchValue
+    );
     this.filteredCourses.emit(filteredCourses);
   }
 }

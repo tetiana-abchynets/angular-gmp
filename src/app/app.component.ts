@@ -7,7 +7,7 @@ import { ICourse } from './core/models/course';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  filteredCourses: ICourse[] = []
+  filteredCourses: ICourse[] = [];
 
   handleFilteredCourses(courses: ICourse[]): void {
     this.filteredCourses = courses;

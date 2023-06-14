@@ -27,10 +27,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     OrderByPipe,
     FilterPipe
   ],
-  exports: [
-    CourseListComponent,
-    SectionComponent
-  ],
+  exports: [CourseListComponent, SectionComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -41,4 +38,4 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormsModule
   ]
 })
-export class CoursesModule { }
+export class CoursesModule {}

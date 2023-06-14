@@ -6,7 +6,6 @@ import { ICourse } from '../../../core/models/course';
   templateUrl: './course-item.component.html',
   styleUrls: ['./course-item.component.css']
 })
-
 export class CourseItemComponent implements OnInit {
   @Input() course!: ICourse;
   @Output() deletedCourseId = new EventEmitter<number>();

@@ -11,20 +11,18 @@ describe('CourseItemComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CourseItemComponent],
-      imports: [
-        MatCardModule,
-        MatIconModule
-      ]
+      imports: [MatCardModule, MatIconModule]
     });
     fixture = TestBed.createComponent(CourseItemComponent);
     component = fixture.componentInstance;
     component.course = {
       id: 1,
-      title: "Video Course 1",
-      creationDate: "2023-05-24T15:26:09.842Z",
-      duration: "1h 28min",
-      description: "Lorem ipsum dolor sit amet"
-    }
+      title: 'Video Course 1',
+      creationDate: '2023-05-24T15:26:09.842Z',
+      duration: 88,
+      topRated: true,
+      description: 'Lorem ipsum dolor sit amet'
+    };
     fixture.detectChanges();
   });
 
@@ -44,17 +42,17 @@ describe('CourseItemComponent', () => {
     component.ngOnInit();
 
     expect(component.creationDate).toBeDefined();
-    expect(component.formattedDate).toBeDefined();
   });
 
   it('should emit deletedCourseId event with correct courseId on delete', () => {
     const courseId = 1;
     component.course = {
       id: 1,
-      title: "Video Course 1",
-      creationDate: "2023-05-24T15:26:09.842Z",
-      duration: "1h 28min",
-      description: "Lorem ipsum dolor sit amet"
+      title: 'Video Course 1',
+      creationDate: '2023-05-24T15:26:09.842Z',
+      duration: 88,
+      topRated: true,
+      description: 'Lorem ipsum dolor sit amet'
     };
     spyOn(component.deletedCourseId, 'emit');
 
@@ -62,5 +60,4 @@ describe('CourseItemComponent', () => {
 
     expect(component.deletedCourseId.emit).toHaveBeenCalledWith(courseId);
   });
-
 });
