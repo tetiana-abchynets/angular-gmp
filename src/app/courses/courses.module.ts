@@ -10,6 +10,10 @@ import { CourseItemComponent } from './components/course-item/course-item.compon
 import { SectionComponent } from './components/section/section.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { CourseBorderDirective } from './directives/course-border.directive';
+import { DurationPipe } from './pipes/duration.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,13 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     CourseItemComponent,
     SectionComponent,
     SearchCourseComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    CourseBorderDirective,
+    DurationPipe,
+    OrderByPipe,
+    FilterPipe
   ],
-  exports: [
-    CourseListComponent,
-    SectionComponent
-  ],
+  exports: [CourseListComponent, SectionComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -33,4 +38,4 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     ReactiveFormsModule
   ]
 })
-export class CoursesModule { }
+export class CoursesModule {}

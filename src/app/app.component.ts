@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICourse } from './core/models/course';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  filteredCourses: ICourse[] = [];
+
+  handleFilteredCourses(courses: ICourse[]): void {
+    this.filteredCourses = courses;
+  }
 }

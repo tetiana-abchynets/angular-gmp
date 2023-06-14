@@ -13,23 +13,21 @@ import { SearchCourseComponent } from './courses/components/search-course/search
 import { AddCourseComponent } from './courses/components/add-course/add-course.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [
-      RouterTestingModule,
-      MatToolbarModule,
-      MatIconModule
-    ],
-    declarations: [
-      AppComponent,
-      HeaderComponent,
-      BreadcrumbsComponent,
-      SectionComponent,
-      CourseListComponent,
-      FooterComponent,
-      SearchCourseComponent,
-      AddCourseComponent
-    ]
-  }));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, MatToolbarModule, MatIconModule],
+      declarations: [
+        AppComponent,
+        HeaderComponent,
+        BreadcrumbsComponent,
+        SectionComponent,
+        CourseListComponent,
+        FooterComponent,
+        SearchCourseComponent,
+        AddCourseComponent
+      ]
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
