@@ -5,23 +5,21 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 })
 export class CourseBorderDirective implements OnInit {
   @Input('appCourseBorder') creationDate!: Date;
-  currentDate: Date = new Date();
-  pastDate: Date = new Date();
-  isFreshCourse = false;
-  isUpcomingCourse = false;
 
   constructor(private element: ElementRef) {}
 
   ngOnInit() {
-    this.pastDate.setDate(this.currentDate.getDate() - 14);
-    this.isFreshCourse =
-      this.creationDate < this.currentDate &&
-      this.creationDate >= this.pastDate;
-    this.isUpcomingCourse = this.creationDate > this.currentDate;
+    const currentDate: Date = new Date();
+    const pastDate: Date = new Date();
 
-    if (this.isFreshCourse) {
+    pastDate.setDate(currentDate.getDate() - 14);
+    const isFreshCourse =
+      this.creationDate < currentDate && this.creationDate >= pastDate;
+    const isUpcomingCourse = this.creationDate > currentDate;
+
+    if (isFreshCourse) {
       this.element.nativeElement.style.border = '4px solid green';
-    } else if (this.isUpcomingCourse) {
+    } else if (isUpcomingCourse) {
       this.element.nativeElement.style.border = '4px solid blue';
     }
   }

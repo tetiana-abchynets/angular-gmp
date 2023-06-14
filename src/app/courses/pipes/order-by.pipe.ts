@@ -5,17 +5,22 @@ import { ICourse } from '../../core/models/course';
   name: 'orderBy'
 })
 export class OrderByPipe implements PipeTransform {
-  transform(courses: ICourse[], field: string, ascending: boolean): ICourse[] {
-    if (!Array.isArray(courses)) {
-      return courses;
-    }
-
+  transform(
+    courses: ICourse[],
+    field: keyof ICourse,
+    ascending: boolean
+  ): ICourse[] {
     return courses.sort((a, b) => {
-      const dateA = new Date(a[field]);
-      const dateB = new Date(b[field]);
-      return ascending
-        ? dateA.getTime() - dateB.getTime()
-        : dateB.getTime() - dateA.getTime();
+      const valueA = a[field];
+      const valueB = b[field];
+
+      if (typeof valueA === 'string' && typeof valueB === 'string') {
+        const dateA = new Date(valueA);
+        const dateB = new Date(valueB);
+        return dateA.getTime() - dateB.getTime();
+      }
+
+      return 0;
     });
   }
 }

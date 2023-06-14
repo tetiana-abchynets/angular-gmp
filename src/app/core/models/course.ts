@@ -5,5 +5,4 @@ export interface ICourse {
   duration: number;
   topRated: boolean;
   description: string;
-  [key: string]: any;
 }

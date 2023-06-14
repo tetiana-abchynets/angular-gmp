@@ -1,4 +1,4 @@
-<div class="container" *ngIf="courses.length">
+<div class="container" *ngIf="courses.length; else noData">
   <div class="course-item" *ngFor="let course of courses | orderBy:'creationDate': false; trackBy: trackByFn">
     <app-course-item [course]="course" (deletedCourseId)="deleteCourse($event)"></app-course-item>
   </div>
@@ -12,7 +12,6 @@
   </button>
 </div>
 
-<div class="error" *ngIf="!courses.length">
+<ng-template #noData>
   <p [ngStyle]="{'text-align': 'center'}">{{"No data. Feel free to add new course" | uppercase}}</p>
-</div>
-
+</ng-template>
