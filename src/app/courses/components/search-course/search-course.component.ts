@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { ICourse } from '../../../core/models/course';
-import { courses as data } from '../../../core/mocks/courses';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-search-course',
@@ -16,10 +16,13 @@ export class SearchCourseComponent implements OnInit {
     ICourse[]
   >();
 
-  constructor(private filterPipe: FilterPipe) {}
+  constructor(
+    private filterPipe: FilterPipe,
+    private coursesService: CoursesService
+  ) {}
 
   ngOnInit() {
-    this.courses = data;
+    this.courses = this.coursesService.getList();
   }
 
   onSearch(): void {
