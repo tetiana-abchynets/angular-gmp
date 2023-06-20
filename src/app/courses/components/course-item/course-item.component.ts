@@ -10,6 +10,7 @@ export class CourseItemComponent implements OnInit {
   @Input() course!: ICourse;
   @Output() deletedCourseId = new EventEmitter<number>();
   creationDate!: Date;
+  showConfirmationModal = false;
 
   ngOnInit() {
     if (this.course && this.course.creationDate) {
@@ -22,6 +23,15 @@ export class CourseItemComponent implements OnInit {
   }
 
   delete(): void {
+    this.showConfirmationModal = true;
+  }
+
+  deleteConfirmed(): void {
     this.deletedCourseId.emit(this.course.id);
+    this.showConfirmationModal = false;
+  }
+
+  cancelDelete(): void {
+    this.showConfirmationModal = false;
   }
 }

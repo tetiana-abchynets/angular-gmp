@@ -9,7 +9,17 @@ img.logo {
   flex: 1 1 auto;
 }
 
-.logout {
+.user-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  margin-right: 4px;
+}
+
+.logout,
+.login {
   font-size: inherit;
   margin-left: 16px;
 }
