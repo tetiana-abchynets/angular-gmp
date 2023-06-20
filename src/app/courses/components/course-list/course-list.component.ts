@@ -11,8 +11,7 @@ export class CourseListComponent implements OnInit, OnChanges {
   @Input() filteredCourses!: ICourse[];
   courses: ICourse[] = [];
 
-  constructor(private coursesService: CoursesService) {
-  }
+  constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
     this.courses = this.coursesService.getList();

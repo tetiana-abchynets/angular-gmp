@@ -35,8 +35,6 @@ export class CoursesService {
     }
   ];
 
-  constructor() { }
-
   getList(): ICourse[] {
     return this.courses;
   }
@@ -46,18 +44,18 @@ export class CoursesService {
   }
 
   getCourseById(courseId: number): ICourse | undefined {
-    return this.courses.find(course => course.id === courseId);
+    return this.courses.find((course) => course.id === courseId);
   }
 
   updateCourse(course: ICourse): void {
-    const index = this.courses.findIndex(item => item.id === course.id);
+    const index = this.courses.findIndex((item) => item.id === course.id);
     if (index !== -1) {
       this.courses[index] = course;
     }
   }
 
   removeCourse(courseId: number): void {
-    const index = this.courses.findIndex(item => item.id === courseId);
+    const index = this.courses.findIndex((item) => item.id === courseId);
     if (index !== -1) {
       this.courses.splice(index, 1);
     }

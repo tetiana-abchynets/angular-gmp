@@ -10,8 +10,7 @@ import { AuthService } from './auth/services/auth.service';
 export class AppComponent {
   filteredCourses: ICourse[] = [];
 
-  constructor(private authService: AuthService) {
-  }
+  constructor(private authService: AuthService) {}
 
   handleFilteredCourses(courses: ICourse[]): void {
     this.filteredCourses = courses;

@@ -11,6 +11,12 @@ import { AuthModule } from '../auth/auth.module';
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, BreadcrumbsComponent],
   exports: [HeaderComponent, FooterComponent, BreadcrumbsComponent],
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, AuthModule]
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    AuthModule
+  ]
 })
 export class CoreModule {}
