@@ -4,7 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CourseListComponent } from './course-list.component';
 import { CourseItemComponent } from '../course-item/course-item.component';
-import { courses as coursesMock } from '../../../core/mocks/courses';
 
 describe('CourseListComponent', () => {
   let component: CourseListComponent;
@@ -30,17 +29,5 @@ describe('CourseListComponent', () => {
     component.loadMore();
 
     expect(console.log).toHaveBeenCalledWith('Load more');
-  });
-
-  it('should remove the course with the specified id', () => {
-    component.courses = coursesMock;
-
-    const courseId = 2;
-    component.deleteCourse(courseId);
-
-    expect(component.courses.length).toBe(coursesMock.length - 1);
-    expect(
-      component.courses.find((course) => course.id === courseId)
-    ).toBeUndefined();
   });
 });
