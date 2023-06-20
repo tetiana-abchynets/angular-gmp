@@ -5,11 +5,7 @@ import { ICourse } from '../../core/models/course';
   name: 'orderBy'
 })
 export class OrderByPipe implements PipeTransform {
-  transform(
-    courses: ICourse[],
-    field: keyof ICourse,
-    ascending: boolean
-  ): ICourse[] {
+  transform(courses: ICourse[], field: keyof ICourse): ICourse[] {
     return courses.sort((a, b) => {
       const valueA = a[field];
       const valueB = b[field];

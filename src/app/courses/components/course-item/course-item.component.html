@@ -23,3 +23,15 @@
     </div>
   </mat-card-content>
 </mat-card>
+
+
+<!-- Confirmation Modal -->
+<div class="modal" *ngIf="showConfirmationModal">
+  <div class="modal-content">
+    <h3>Do you really want to delete this course?</h3>
+    <div class="modal-actions">
+      <button mat-raised-button color="primary" (click)="deleteConfirmed()">Yes</button>
+      <button mat-raised-button color="warn" (click)="cancelDelete()">No</button>
+    </div>
+  </div>
+</div>

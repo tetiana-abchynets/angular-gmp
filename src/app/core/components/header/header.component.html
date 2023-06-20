@@ -4,10 +4,16 @@
 
   <span class="spacer"></span>
 
-  <mat-icon>person</mat-icon>
-  <span>User login</span>
-  <button mat-button class="logout">
-    <mat-icon class="logout-icon" style="margin-right: 4px;">logout</mat-icon>
-    Log out
+  <div class="user-name" *ifAuthenticated="isAuthenticated()">
+    <mat-icon class="user-icon">person</mat-icon>
+    <span>{{userLogin}}</span>
+  </div>
+  <button mat-button class="logout" *ifAuthenticated="isAuthenticated()" (click)="logout()">
+    <mat-icon class="logout" style="margin-right: 4px;">logout</mat-icon>
+    Logout
+  </button>
+  <button mat-button class="login" *ifAuthenticated="!isAuthenticated()">
+    <mat-icon class="login" style="margin-right: 4px;">login</mat-icon>
+    Log in
   </button>
 </mat-toolbar>
